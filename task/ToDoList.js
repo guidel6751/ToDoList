@@ -100,7 +100,7 @@ const ToDoList = () => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: personalDetails.idPicture }} style={styles.profileImage} />
-      <Text>Display Name: {personalDetails.displayName}</Text>
+      <Text>Name: {personalDetails.displayName}</Text>
       <Text>School ID: {personalDetails.schoolID}</Text>
       <Text>Section Code: {personalDetails.sectionCode}</Text>
       <Text>Course Description: {personalDetails.courseDescription}</Text>
@@ -109,7 +109,7 @@ const ToDoList = () => {
       <Text style={styles.title}>TO DO LIST</Text>
       <TextInput
         style={styles.input}
-        placeholder="Enter a new todo"
+        placeholder="ENTER TO DO LIST"
         value={newTodoText}
         onChangeText={setNewTodoText}
       />
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
   profileImage: {
     width: 100,
     height: 100,
-    borderRadius: 50, // Half of width and height to make it circular
+    borderRadius: 50, 
     marginBottom: 10,
   },
 });
