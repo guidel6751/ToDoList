@@ -3,6 +3,17 @@ import { View, Text, TextInput, Button, FlatList, TouchableOpacity, Image, Style
 import { Feather } from '@expo/vector-icons';
 import create from 'zustand';
 
+// Your personal details
+const personalDetails = {
+  displayName: 'Guidel Atienza',
+  schoolID: '20211072',
+  sectionCode: 'IT35B',
+  courseDescription: 'IT73',
+  courseName: 'BSIT',
+  academicYear: '2023-2024',
+  idPicture: 'assets/guidel.jpg',
+};
+
 const useToDoStore = create((set) => ({
   todos: [],
   addTodo: (todo) => set((state) => ({ todos: [...state.todos, todo] })),
@@ -88,6 +99,13 @@ const ToDoList = () => {
 
   return (
     <View style={styles.container}>
+      <Image source={{ uri: personalDetails.idPicture }} style={styles.profileImage} />
+      <Text>Display Name: {personalDetails.displayName}</Text>
+      <Text>School ID: {personalDetails.schoolID}</Text>
+      <Text>Section Code: {personalDetails.sectionCode}</Text>
+      <Text>Course Description: {personalDetails.courseDescription}</Text>
+      <Text>Course Name: {personalDetails.courseName}</Text>
+      <Text>Academic Year: {personalDetails.academicYear}</Text>
       <Text style={styles.title}>TO DO LIST</Text>
       <TextInput
         style={styles.input}
@@ -128,6 +146,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    marginTop: 20,
     color: 'black',
   },
   input: {
@@ -137,6 +156,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#fff',
     fontSize: 20,
+    
   },
   todoItem: {
     flexDirection: 'row',
@@ -174,6 +194,12 @@ const styles = StyleSheet.create({
   },
   iconButton: {
     marginLeft: 10,
+  },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50, // Half of width and height to make it circular
+    marginBottom: 10,
   },
 });
 
