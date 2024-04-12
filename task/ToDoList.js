@@ -91,7 +91,7 @@ const ToDoList = () => {
       <Text style={styles.title}>TO DO LIST</Text>
       <TextInput
         style={styles.input}
-        placeholder="Enter a new todo"
+        placeholder="ENTER TO DO LIST"
         value={newTodoText}
         onChangeText={setNewTodoText}
       />
